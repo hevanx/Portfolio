@@ -1,0 +1,85 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+     background-color: #eeece9;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+    
+}
+
+.gallery-item {
+    overflow: hidden;
+    border: 2px black solid;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   
+     background-color: #eeece9;
+    
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000000;
+    color: #fff;
+    font-size: 0.9rem;
+}
+.home-link  {
+  display: block;
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem auto;
+  color: #ffffff; /* optional if inside a dark footer */
+  text-decoration: none;
+
+}
+a:hover{
+    color: #1900ff;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

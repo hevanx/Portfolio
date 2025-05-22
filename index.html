@@ -1,159 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Media Portfolio</title>
-    <link rel="stylesheet" href="styles.cs">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #473f3f;
-            color: #111;
-        }
-
-        header {
-            background: #222;
-            color: #ff9900;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
-        a:hover {
-    color:#ff9900
-}
-
-a, a:visited {
-    color:#ebd8bb
-}
-
-        section {
-            padding: 2rem 1rem;
-            color: #ebd8bb;
-        }
-
-        .figma-embed-container {
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .figma-embed-container iframe {
-            width: 100%;
-            height: 700px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-            color: #ebd8bb;
-        }
-
-        /* Graphic Design Highlight */
-        #portfolio {
-            background-color: #473f3f;
-            padding: 3rem 1rem;
-        }
-
-        #portfolio h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #ebd8bb;
-    margin-bottom: 2rem;
-    border-bottom: 4px solid #444;
-    display: inline-block;
-    padding-bottom: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-        .portfolio-gallery {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .portfolio-item {
-            max-width: 400px;
-            text-align: center;
-            background-color: #362b2b;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item img:hover {
-            transform: scale(1.03);
-        }
-
-        .portfolio-item h3 {
-            font-size: 1.5rem;
-            margin: 1rem 0 0.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #333;
-            color: #ffffff;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Media Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Ethan Greenfield</h1>
-        <p>Digital Media Artist & Designer</p>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p style="max-width: 800px; margin: 0 auto;">Hello! I'm a digital media artist with a passion for creating visually compelling work. With experience in graphic design and video production, I bring stories to life through my skills and creativity.</p>
-    </section>
+  <!-- Header Section -->
+  <header>
+    <h1>Ethan Greenfield</h1>
+    <h3>Digital Media Artist & Designer</h3>
+  </header>
 
-    <!-- Figma Prototype Section -->
-    <section id="figma-prototype">
-        <h2 class="section-title">UX/UI Prototype</h2>
-        <div class="figma-embed-container">
-            <iframe src="https://embed.figma.com/proto/h0bhoNnM1klGR7qAMNiEyB/Roll-for-group?node-id=9-52&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
-        </div>
-    </section>
+  <br>
 
-    <!-- Graphic Design Section -->
-    <section id="portfolio">
-        <h2>Graphic Designs</h2>
-        <div class="portfolio-gallery">
-            <div class="portfolio-item">
-                <a href="graphics.html"><img src="graphics.png" alt="Project 1"></a>
-                <h3>Graphic Design</h3>
-                <p>Flyers, Cover Art, Logos and Game Environments</p>
-            </div>
-        </div>
-    </section>
+ 
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <h3 style="text-align: center;">Email: <a href="mailto:egreenfld@gmail.com">egreenfld@gmail.com</a></h3>
-    </section>
+  <!-- Profile Image -->
+  <div class="profile-banner">
+    <img src="img/profile banner.PNG" alt="Ethan Greenfield profile banner" class="fade-in" />
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Ethan Greenfield</p>
-    </footer>
+<br>
+
+
+  <!-- About Section -->
+  <section id="about">
+    <p style="max-width: 800px; margin: 20px auto; text-align: center;">
+      Hello! I'm a digital media artist with a passion for creating visually compelling work. With experience in graphic design and video production, I bring stories to life through my skills and creativity.
+    </p>
+  </section>
+
+  <hr />
+
+  <!-- Projects Section -->
+  <section id="projects" class="project-grid">
+    <div class="project-card">
+      <div class="thumbnail">
+        <a href="UX.html" target="_blank">
+          <img src="img/Sign up Sample (1).png" alt="UX/UI Project Thumbnail" />
+        </a>
+      </div>
+      <h3>UX/UI</h3>
+      <p>Designs, reworks and projects</p>
+    </div>
+
+    <div class="project-card">
+      <div class="thumbnail">
+        <a href="graphics.html" target="_blank">
+          <img src="img/Decasia 2.2.png" alt="Graphic Design Thumbnail" />
+        </a>
+      </div>
+      <h3>Graphic Design</h3>
+      <p>Flyers, Cover Art, Logos and Game Environments</p>
+    </div>
+
+    <!-- Add more cards here as needed -->
+  </section>
+
+<br>
+
+  <!-- Footer -->
+<footer class="footer-text">
+  <p>&copy; 2024 Ethan Greenfield</p>
+  <nav class="footer-nav">
+
+     <a href="https://www.instagram.com/ethan.d.greenfield/" target="_blank">Instagram</a>
+     <a href="www.linkedin.com/in/ethan-greenfield-365566144" target="_blank">Linkedin</a>
+  </nav>
+</footer>
+
 </body>
 </html>
+
