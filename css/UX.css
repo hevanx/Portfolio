@@ -1,52 +1,53 @@
-
-
 body {
-
-     background-color: #eeece9;
+  background-color: #eeece9;
 }
 
 header {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #000000;
-    color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 header h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 p {
-    text-align: center;
-    padding: 1rem;
-font-family: 'Inter', sans-serif;
-    color: #000000;
-    font-size: 1.4rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #000000;
+  font-size: 1.4rem;
 }
-h2{
+
+h2 {
   font-family: 'Inter', sans-serif;
 }
+
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #000000;
-    color: #fff;
-    font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
 }
-.home-link  {
+
+.home-link {
   display: block;
   text-align: center;
   font-size: 3rem;
   margin: 1rem auto;
-  color: #ffffff; /* optional if inside a dark footer */
+  color: #ffffff;
   text-decoration: none;
-
-}
-a:hover{
-    color: #1900ff;
 }
 
+a:hover {
+  color: #1900ff;
+}
+
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1.2s ease-in forwards;
@@ -57,10 +58,12 @@ a:hover{
     opacity: 1;
   }
 }
+
+/* Scroll Image Strip */
 .scroll-wrapper {
   overflow: hidden;
   width: 100%;
-  background: #eeece9; /* match your site */
+  background: #eeece9;
   padding: 1rem 0;
 }
 
@@ -71,12 +74,11 @@ a:hover{
 }
 
 .scroll-track img {
-  height: 300px; /* adjust as needed */
+  height: 300px;
   margin-right: 16px;
   flex-shrink: 0;
 }
 
-/* Looping scroll animation */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -86,6 +88,7 @@ a:hover{
   }
 }
 
+/* Gallery + Article Layout */
 .gallery-article {
   display: flex;
   justify-content: center;
@@ -132,4 +135,47 @@ a:hover{
   color: #333;
   font-family: 'Inter', sans-serif;
 }
+
+/* ✅ Mobile Styles */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .home-link {
+    font-size: 2rem;
+  }
+
+  .scroll-track img {
+    height: 200px;
+  }
+
+  .image-pair {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-item img {
+    width: 200px; /* Set max image width */
+    height: auto;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .paragraph {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  .paragraph h2 {
+    font-size: 1rem;
+  }
+}
+
 
