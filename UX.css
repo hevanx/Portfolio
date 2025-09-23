@@ -1,0 +1,145 @@
+@import url('./styles.css');
+
+/* page background stays consistent with the site */
+body { background: var(--bg); }
+
+/* ---------- UX strip: tidy, snap scrolling, lightbox-ready ---------- */
+
+.scroll-wrapper{
+  width: min(1100px, 92vw);
+  margin: 12px auto 0;
+  border: 1px solid #ececec;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+.scroll-track{
+  display: grid;
+  grid-auto-flow: column;
+  gap: 12px;
+  padding: 14px;
+  /* horizontal snap scrolling instead of auto-animating marquee */
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* phone screen size: smaller and consistent */
+.scroll-track img{
+  height: 420px;      /* desktop default */
+  width: auto;
+  border-radius: 12px;
+  border: 1px solid #e9e9e9;
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+  scroll-snap-align: start;
+  cursor: zoom-in;
+  background: #fff;
+}
+
+/* hover pause was for marquee; no auto animation now, so no need */
+
+/* reduced motion users still get static layout with manual scroll */
+@media (prefers-reduced-motion: reduce){
+  .scroll-track { scroll-behavior: auto; }
+}
+
+/* scale UX screens down further on narrower viewports */
+@media (max-width: 1100px){
+  .scroll-track img{ height: 360px; }
+}
+@media (max-width: 900px){
+  .scroll-track img{ height: 300px; }
+}
+@media (max-width: 600px){
+  .scroll-track img{ height: 240px; }
+}
+
+/* ---------- TIAA before/after: larger, breathable comparison ---------- */
+
+.compare{
+  width: min(1100px, 92vw);
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.compare-item{
+  background: var(--surface);
+  border: 1px solid #ececec;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.compare-item img{
+  display: block;
+  width: 100%;
+  height: clamp(300px, 48vw, 520px);
+  object-fit: contain;                 /* do not crop UI screenshots */
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.compare-item figcaption{
+  padding: 10px 12px 14px;
+  font-size: .98rem;
+  color: var(--muted);
+  border-top: 1px solid #eee;
+}
+
+.rationale{
+  margin-top: 14px;
+}
+.rationale p{
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+/* stack on mobile */
+@media (max-width: 900px){
+  .compare{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Lightbox (for both the UX strip and TIAA images) ---------- */
+
+#lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.88);
+  z-index: 50;
+}
+#lightbox img{
+  max-width: min(92vw, 1400px);
+  max-height: 90vh;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.3);
+  background: #fff;
+}
+#lightbox button{
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  #lightbox{ transition: none; }
+}
+
+
+
+

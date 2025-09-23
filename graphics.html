@@ -1,39 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture Gallery</title>
-    <link rel="stylesheet" href="css/gallery.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graphics Gallery — Ethan Greenfield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="fade-in">
-    <header>
-        <h1>Graphics Gallery</h1>
-    </header>
+<body>
 
-    <section class="gallery">
-        <div class="gallery-item">
-            <img src="img/Ghouls night out flyer.png" class="fade-in" alt="Image 1">
-        </div>
-        <div class="gallery-item">
-            <img src="img/Decasia 2.2.png" class="fade-in"alt="Image 2">
-        </div>
-        <div class="gallery-item">
-            <img src="img/image0 (2) (1).jpeg" class="fade-in"alt="Image 3">
-        </div>
-        <div class="gallery-item">
-            <img src="img/Decasia draft.png" class="fade-in"alt="Image 4">
-        </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Ethan Greenfield</span>
+        <span class="brand-role">Digital Media Artist & Designer</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="mailto:youremail@ucf.edu">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h1 class="section-title">Graphics Gallery</h1>
 
+      <div class="grid">
+        <!-- Item 1 -->
+        <article class="card">
+          <a class="card-media" href="img/ghouls-night-out-flyer.png" data-full="img/ghouls-night-out-flyer.png">
+            <img src="img/ghouls night out flyer.png" alt="Ghouls Night Out flyer" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Ghouls Night Out</h3>
+            <p class="card-meta">Event flyer</p>
+          </div>
+        </article>
 
-        
-    </section>
+        <!-- Item 2 -->
+        <article class="card">
+          <a class="card-media" href="img/decasia-2-2.png" data-full="img/decasia-2-2.png">
+            <img src="img/Decasia 2.2.png" alt="Decasia collage 2.2" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Decasia 2.2</h3>
+            <p class="card-meta">Graphic collage</p>
+          </div>
+        </article>
 
-    <footer>
-        <a href="index.html" class="home-link">Home</a>
-    </footer>
- 
+        <!-- Item 3 -->
+        <article class="card">
+          <a class="card-media" href="img/image0-2-1.jpeg" data-full="img/image0-2-1.jpeg">
+            <img src="img/image0 (2) (1).jpeg" alt="Graphic composition" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Composition</h3>
+            <p class="card-meta">Mixed media</p>
+          </div>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="card">
+          <a class="card-media" href="img/decasia-draft.png" data-full="img/decasia-draft.png">
+            <img src="img/Decasia draft.png" alt="Decasia draft" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Decasia Draft</h3>
+            <p class="card-meta">Work in progress</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ethan Greenfield</p>
+      <nav class="footer-nav">
+        <a href="https://www.instagram.com/ethan.d.greenfield/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/ethan-greenfield-365566144" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" aria-hidden="true" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:50;">
+    <button id="lbClose" aria-label="Close" style="position:absolute;top:16px;right:18px;background:#fff;border:none;border-radius:10px;padding:.5rem .75rem;cursor:pointer;font-weight:600;">Close</button>
+    <img id="lbImg" alt="" style="max-width:min(92vw,1200px);max-height:90vh;border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.3);" />
+  </div>
+
+  <script>
+    // current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const close = document.getElementById('lbClose');
+
+    document.querySelectorAll('.card-media').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        lbImg.src = a.dataset.full || a.href;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function hideLB(){
+      lb.style.display = 'none';
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+    }
+    close.addEventListener('click', hideLB);
+    lb.addEventListener('click', e => { if(e.target === lb) hideLB(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') hideLB(); });
+  </script>
 </body>
 </html>
