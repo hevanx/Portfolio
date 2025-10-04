@@ -1,3 +1,31 @@
+/* Make the lightbox content fit on phones and allow scrolling inside */
+.lightbox-inner{ max-height: 92vh; overflow: hidden; }
+.lightbox-body{ max-height: calc(92vh - 52px); overflow: auto; }
+
+/* Keep images from overflowing the viewport in the lightbox */
+.compare img{ max-height: 74vh; object-fit: contain; }
+
+/* Smaller card thumbnails on small screens */
+@media (max-width: 640px){
+  .section{ padding: 48px 0; }
+  .hero{ padding: 24px 0; }
+  .grid{ gap: 16px; }
+  .card-media img{ height: 180px; }
+
+  /* Lightbox: stack images vertically on phones */
+  .lightbox-inner{ width: 96vw; }
+  .compare{ grid-template-columns: 1fr; }
+  .compare img{ max-height: 68vh; }
+
+  /* Plaque slider handle and labels a bit smaller */
+  .ba-handle{ width: 30px; height: 30px; }
+  .ba-handle::before{ width: 12px; height: 12px; }
+  .ba-labels{ font-size: .8rem; padding: 6px 8px; }
+}
+
+/* Stop background page from scrolling when the lightbox is open */
+body.modal-open{ overflow: hidden; }
+
 :root{
   --bg: #faf9f7;
   --ink: #111;
@@ -119,4 +147,3 @@ img{ display:block; max-width:100%; height:auto; }
   .hero-media{ order:2; }
   .hero-copy{ order:1; }
 }
-
