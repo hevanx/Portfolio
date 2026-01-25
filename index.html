@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethan Greenfield | Marketing Portfolio</title>
+  <meta name="description" content="Marketing portfolio showcasing organic short-form growth, strategy, and execution." />
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --card:#12141a;
+      --text:#e9ecf1;
+      --muted:#a7b0be;
+      --line:#232634;
+      --accent:#7aa2ff;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(122,162,255,.22), transparent 60%),
+                  radial-gradient(1200px 800px at 100% 10%, rgba(122,162,255,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,12,15,.72);
+      border-bottom: 1px solid rgba(35,38,52,.75);
+    }
+    .nav-inner{
+      max-width:var(--max); margin:0 auto; padding:14px 24px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{font-weight:700; letter-spacing:.2px}
+    .links{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .links a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .links a:hover{color:var(--text); border-color:rgba(122,162,255,.35); background:rgba(122,162,255,.08)}
+    .hero{padding:48px 0 22px}
+    .kicker{color:var(--muted); font-weight:600; letter-spacing:.3px}
+    h1{font-size: clamp(30px, 4vw, 48px); margin:10px 0 10px; line-height:1.15}
+    .sub{color:var(--muted); font-size: 16px; max-width: 70ch}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(122,162,255,.45);
+      background: rgba(122,162,255,.12);
+      color: var(--text);
+      font-weight:650;
+    }
+    .btn:hover{background: rgba(122,162,255,.18)}
+    .btn.secondary{
+      border-color: rgba(35,38,52,1);
+      background: rgba(18,20,26,.65);
+      color: var(--muted);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:16px;
+      padding: 18px 0 44px;
+    }
+    .card{
+      background: rgba(18,20,26,.85);
+      border: 1px solid rgba(35,38,52,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h2{margin:0 0 8px; font-size: 18px}
+    .card p{margin:0; color:var(--muted)}
+    .stat{
+      display:flex; flex-direction:column; gap:6px;
+      padding:16px;
+      border-radius: 14px;
+      border:1px solid rgba(35,38,52,.95);
+      background: rgba(11,12,15,.35);
+    }
+    .stat .num{font-size:22px; font-weight:800; letter-spacing:.2px}
+    .stat .lab{color:var(--muted); font-weight:600; font-size:13px}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin: 6px 0 14px;
+    }
+    .section-title h2{margin:0; font-size:22px}
+    .section-title span{color:var(--muted)}
+    .pill{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(35,38,52,.95);
+      color:var(--muted);
+      font-weight:650;
+      font-size: 12px;
+      background: rgba(11,12,15,.35);
+      margin: 6px 8px 0 0;
+    }
+    ul{margin:10px 0 0; padding-left: 18px; color: var(--muted)}
+    li{margin:6px 0}
+    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .footer{padding: 10px 0 40px; color: var(--muted); font-size: 13px}
+    .hr{height:1px; background:rgba(35,38,52,.95); margin: 10px 0 0}
+    .small{font-size: 13px}
+    @media (max-width: 860px){
+      .two-col{grid-template-columns: 1fr}
+      .nav-inner{padding:12px 16px}
+      .wrap{padding:16px}
+      .hero{padding:34px 0 14px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">Ethan Greenfield</div>
+      <nav class="links">
+        <a href="#case-study">Case Study</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Marketing Portfolio</div>
+      <h1>Social Media Marketer Focused on Organic Short Form Growth</h1>
+      <p class="sub">
+        I build repeatable content systems that increase reach, engagement, and follower growth.
+        I plan, write, film, and edit all content myself.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#case-study">View Case Study</a>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" style="grid-column: span 12;">
+        <div class="section-title">
+          <h2>Performance Snapshot</h2>
+          <span class="small">~3 months | 1 reel per week | Mondays at 4 PM</span>
+        </div>
+
+        <div class="two-col">
+          <div class="stat">
+            <div class="num">+1,337.2%</div>
+            <div class="lab">Accounts reached</div>
+          </div>
+          <div class="stat">
+            <div class="num">166,481</div>
+            <div class="lab">Total views</div>
+          </div>
+          <div class="stat">
+            <div class="num">+148%</div>
+            <div class="lab">Profile activity</div>
+          </div>
+          <div class="stat">
+            <div class="num">+198</div>
+            <div class="lab">New followers (starting from 70)</div>
+          </div>
+          <div class="stat">
+            <div class="num">6</div>
+            <div class="lab">Followers lost</div>
+          </div>
+          <div class="stat">
+            <div class="num">7% to 10%</div>
+            <div class="lab">Engagement rate on Reels</div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+        <p style="margin-top:12px" class="small">
+          Role: strategy, copywriting, on camera performance, editing, publishing.
+        </p>
+      </div>
+    </section>
+
+    <section id="case-study" class="card" style="margin: 0 0 16px;">
+      <div class="section-title">
+        <h2>Case Study: Organic Instagram Reels Growth for an Independent Label</h2>
+        <span class="small">Short-form content system from scratch</span>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <h3 style="margin:0 0 8px;">Overview</h3>
+          <p>
+            <strong>Platform:</strong> Instagram Reels<br />
+            <strong>Timeframe:</strong> ~3 months<br />
+            <strong>Cadence:</strong> 1 reel per week (Mondays, 4 PM)<br />
+            <strong>My role:</strong> Social strategy, scripting, filming, editing, posting
+          </p>
+
+          <h3 style="margin:16px 0 8px;">Starting Point</h3>
+          <p class="small">
+            The account began with a small audience (70 followers) and needed consistent reach, profile actions, and follower growth.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="margin:0 0 8px;">Strategy</h3>
+          <ul>
+            <li>Built a repeatable short-form format designed for retention and shares.</li>
+            <li>Optimized hooks to communicate the point in the first 1–2 seconds.</li>
+            <li>Kept posting consistent and sustainable to protect quality and avoid burnout.</li>
+            <li>Made content in-house end-to-end to iterate quickly without bottlenecks.</li>
+          </ul>
+
+          <h3 style="margin:16px 0 8px;">Execution</h3>
+          <ul>
+            <li>Scripted and wrote on-screen hooks.</li>
+            <li>Edited for pacing and clarity.</li>
+            <li>Appeared on camera to build trust and improve conversion from views to follows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <h3 style="margin:16px 0 8px;">Results</h3>
+      <ul>
+        <li>Accounts reached increased by 1,337.2%.</li>
+        <li>166,481 total views across Reels.</li>
+        <li>Profile activity increased by 148%.</li>
+        <li>Gained 198 followers from a starting point of 70, with only 6 unfollows.</li>
+        <li>Reels averaged 7% to 10% engagement.</li>
+      </ul>
+
+      <h3 style="margin:16px 0 8px;">Examples</h3>
+     
+      <ul>
+        <li><a href="https://www.instagram.com/reel/DS3JeynFbSD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 1</a> </li>
+        <li><a href="https://www.instagram.com/reel/DTvy4FaEi0k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 2</a> </li>
+        <li><a href="https://www.instagram.com/reel/DTbQj6Wjo7i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 3</a> </li>
+      </ul>
+
+      <h3 style="margin:16px 0 8px;">What I Learned</h3>
+      <ul>
+        <li>Low-volume posting can outperform high-volume output when the hook and pacing are strong.</li>
+        <li>On-camera content improves trust and follow-through when the message is clear.</li>
+        <li>Consistency makes testing easier and results more reliable.</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card" style="margin: 0 0 16px;">
+      <div class="section-title">
+        <h2>Skills</h2>
+
+      </div>
+      <div>
+        <span class="pill">Short-form strategy</span>
+        <span class="pill">Hook writing</span>
+        <span class="pill">Copywriting</span>
+        <span class="pill">On-camera performance</span>
+        <span class="pill">Video editing</span>
+        <span class="pill">Content systems</span>
+        <span class="pill">Basic analytics reporting</span>
+      </div>
+      <p class="small" style="margin-top:12px;">
+        Tools: CapCut and Premiere , Canva and photoshop, Google Sheets , Instagram Insights.
+      </p>
+    </section>
+
+    <section id="about" class="card" style="margin: 0 0 16px;">
+      <div class="section-title">
+        <h2>About</h2>
+   
+      </div>
+      <p>
+        I focus on organic social growth through repeatable content formats, fast iteration, and strong hooks.
+        I like work where the results are visible and the feedback loop is quick.
+      </p>
+      <p class="small">
+        I also handle design and editing in-house, which lets me ship consistently and improve quickly without depending on a team for every change.
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <div class="section-title">
+        <h2>Contact</h2>
+
+      </div>
+      <p class="small">
+        Email: <a class="pill" href="mailto:egreenfld@gmail.com">egreenfld@gmail.com</a><br />
+        LinkedIn: <a class="pill" href="www.linkedin.com/in/ethan-greenfield-365566144" target="_blank" rel="noreferrer">Ethan Greenfield</a><br />
+        Instagram: <a class="pill" href="https://www.instagram.com/ethan.d.greenfield/" target="_blank" rel="noreferrer">Ethan D Greenfield</a>
+      </p>
+    </section>
+
+    <div class="footer">
+      <div class="hr"></div>
+      <p style="margin-top:12px;">© <span id="y"></span> Ethan Greenfield</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
