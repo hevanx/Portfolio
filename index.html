@@ -29,6 +29,8 @@
     }
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
+    /* Nav */
     .nav{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
@@ -48,78 +50,157 @@
       border:1px solid transparent;
     }
     .links a:hover{color:var(--text); border-color:rgba(122,162,255,.35); background:rgba(122,162,255,.08)}
-    .hero{padding:48px 0 22px}
-    .kicker{color:var(--muted); font-weight:600; letter-spacing:.3px}
-    h1{font-size: clamp(30px, 4vw, 48px); margin:10px 0 10px; line-height:1.15}
-    .sub{color:var(--muted); font-size: 16px; max-width: 70ch}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+
+    /* Hero */
+    .hero{
+      padding: 60px 0 44px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-photo{
+      flex-shrink: 0;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid rgba(122,162,255,.4);
+      box-shadow: 0 0 48px rgba(122,162,255,.18);
+    }
+    .kicker{color:var(--accent); font-weight:600; letter-spacing:.3px; font-size:14px; margin-bottom:10px}
+    h1{font-size: clamp(28px, 3.8vw, 46px); margin:0 0 14px; line-height:1.15}
+    .sub{color:var(--muted); font-size:16px; max-width:58ch; margin:0 0 22px}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px;
+      padding:12px 20px;
       border-radius:14px;
       border:1px solid rgba(122,162,255,.45);
       background: rgba(122,162,255,.12);
       color: var(--text);
       font-weight:650;
     }
-    .btn:hover{background: rgba(122,162,255,.18)}
+    .btn:hover{background: rgba(122,162,255,.22)}
     .btn.secondary{
       border-color: rgba(35,38,52,1);
       background: rgba(18,20,26,.65);
       color: var(--muted);
     }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
-      padding: 18px 0 44px;
+    .btn.secondary:hover{color:var(--text); border-color:rgba(122,162,255,.25)}
+
+    /* Directory */
+    .directory{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 0 0 40px;
     }
+    .dir-card{
+      background: rgba(18,20,26,.85);
+      border: 1px solid rgba(35,38,52,.9);
+      border-radius: var(--radius);
+      padding: 20px 18px;
+      transition: border-color .2s, background .2s;
+    }
+    .dir-card:hover{
+      border-color: rgba(122,162,255,.4);
+      background: rgba(122,162,255,.06);
+    }
+    .dir-num{
+      font-size:11px; font-weight:700; letter-spacing:.8px;
+      text-transform:uppercase; color:var(--accent); margin-bottom:8px;
+    }
+    .dir-label{font-weight:700; font-size:15px; margin-bottom:4px}
+    .dir-desc{color:var(--muted); font-size:12px}
+
+    /* Cards */
     .card{
       background: rgba(18,20,26,.85);
       border: 1px solid rgba(35,38,52,.9);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 18px;
+      padding: 24px;
+      margin: 0 0 16px;
     }
-    .card h2{margin:0 0 8px; font-size: 18px}
-    .card p{margin:0; color:var(--muted)}
+
+    /* Stats */
+    .stats-bar{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0 0;
+    }
     .stat{
-      display:flex; flex-direction:column; gap:6px;
-      padding:16px;
+      display:flex; flex-direction:column; gap:5px;
+      padding:20px 16px;
       border-radius: 14px;
       border:1px solid rgba(35,38,52,.95);
-      background: rgba(11,12,15,.35);
+      background: rgba(11,12,15,.4);
+      text-align:center;
     }
-    .stat .num{font-size:22px; font-weight:800; letter-spacing:.2px}
-    .stat .lab{color:var(--muted); font-weight:600; font-size:13px}
+    .stat .num{font-size:28px; font-weight:800; letter-spacing:.2px; color:var(--accent)}
+    .stat .lab{color:var(--muted); font-weight:600; font-size:12px}
+
+    /* Section headers */
     .section-title{
       display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
-      margin: 6px 0 14px;
+      margin: 0 0 18px;
     }
     .section-title h2{margin:0; font-size:22px}
-    .section-title span{color:var(--muted)}
+    .section-title span{color:var(--muted); font-size:13px}
+
+    /* Case study phases */
+    .cs-phases{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 0 0 4px;
+    }
+    .cs-phase{
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(35,38,52,.95);
+      background: rgba(11,12,15,.4);
+    }
+    .cs-phase-label{
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .cs-phase p{font-size:13px; color:var(--muted); margin:0; line-height:1.6}
+
+    /* Pills */
     .pill{
       display:inline-flex;
-      padding:7px 10px;
+      padding:7px 12px;
       border-radius:999px;
       border:1px solid rgba(35,38,52,.95);
       color:var(--muted);
       font-weight:650;
       font-size: 12px;
       background: rgba(11,12,15,.35);
-      margin: 6px 8px 0 0;
+      margin: 6px 6px 0 0;
     }
-    ul{margin:10px 0 0; padding-left: 18px; color: var(--muted)}
-    li{margin:6px 0}
+    a.pill:hover{border-color:rgba(122,162,255,.4); color:var(--text); background:rgba(122,162,255,.08)}
+
     .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .hr{height:1px; background:rgba(35,38,52,.95); margin: 16px 0}
+    .small{font-size:13px; color:var(--muted)}
     .footer{padding: 10px 0 40px; color: var(--muted); font-size: 13px}
-    .hr{height:1px; background:rgba(35,38,52,.95); margin: 10px 0 0}
-    .small{font-size: 13px}
+
     @media (max-width: 860px){
+      .hero{flex-direction:column; align-items:flex-start; gap:24px; padding:40px 0 28px}
+      .hero-photo{width:130px; height:130px}
+      .directory{grid-template-columns: repeat(2,1fr)}
+      .stats-bar{grid-template-columns: repeat(2,1fr)}
+      .cs-phases{grid-template-columns: 1fr}
       .two-col{grid-template-columns: 1fr}
       .nav-inner{padding:12px 16px}
       .wrap{padding:16px}
-      .hero{padding:34px 0 14px}
     }
   </style>
 </head>
@@ -131,149 +212,149 @@
       <nav class="links">
         <a href="#performance">Results</a>
         <a href="#case-study">Case Study</a>
-        <a href="#video-work">Video Work</a>
+        <a href="#video-work">Video</a>
         <a href="#skills">Skills</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
+
+    <!-- INTRO -->
     <section class="hero">
-      <div class="kicker">Social Media Coordinator | Available for Work</div>
-      <h1>Social Media Coordinator Focused on Organic Short-Form Growth</h1>
-      <p class="sub">
-        590,000+ views and 227,000+ accounts reached in 90 days — all organic, no paid promotion.
-        I build content systems from the ground up: strategy, scripting, filming, editing, and publishing.
-      </p>
-      <div class="cta-row">
-        <a class="btn" href="#case-study">View Case Study</a>
-        <a class="btn secondary" href="#contact">Contact</a>
-      </div>
-    </section>
-
-    <section id="performance" class="grid">
-      <div class="card" style="grid-column: span 12;">
-        <div class="section-title">
-          <h2>Performance Snapshot</h2>
-          <span class="small">90 days | Krok Records | Social Media Coordinator</span>
-        </div>
-
-        <div class="two-col">
-          <div class="stat">
-            <div class="num">227,000+</div>
-            <div class="lab">Accounts reached (last 90 days)</div>
-          </div>
-          <div class="stat">
-            <div class="num">590,000+</div>
-            <div class="lab">Total views across Reels</div>
-          </div>
-          <div class="stat">
-            <div class="num">+413%</div>
-            <div class="lab">Profile activity</div>
-          </div>
-          <div class="stat">
-            <div class="num">+726</div>
-            <div class="lab">Net new followers in 90 days (+600%)</div>
-          </div>
-          <div class="stat">
-            <div class="num">63,000+</div>
-            <div class="lab">Total interactions</div>
-          </div>
-          <div class="stat">
-            <div class="num">94%</div>
-            <div class="lab">Views from non-followers</div>
-          </div>
-        </div>
-
-        <div class="hr"></div>
-        <p style="margin-top:12px" class="small">
-          Role: strategy, scripting, hook writing, filming, editing, captions, publishing.
+      <img class="hero-photo" src="../Photos/head shot.png" alt="Ethan Greenfield" />
+      <div class="hero-text">
+        <div class="kicker">Social Media Coordinator &middot; Available for Work</div>
+        <h1>Hi, I'm Ethan Greenfield.</h1>
+        <p class="sub">
+          I build organic short-form content systems from the ground up — strategy, scripting, filming, editing, and publishing. My focus is measurable growth.
         </p>
+        <div class="cta-row">
+          <a class="btn" href="#case-study">View Case Study</a>
+          <a class="btn secondary" href="#contact">Get in Touch</a>
+        </div>
       </div>
     </section>
 
-    <section id="case-study" class="card" style="margin: 0 0 16px;">
+    <!-- DIRECTORY -->
+    <div class="directory">
+      <a class="dir-card" href="#performance">
+        <div class="dir-num">01</div>
+        <div class="dir-label">Results</div>
+        <div class="dir-desc">90-day performance snapshot</div>
+      </a>
+      <a class="dir-card" href="#case-study">
+        <div class="dir-num">02</div>
+        <div class="dir-label">Case Study</div>
+        <div class="dir-desc">Krok Records growth strategy</div>
+      </a>
+      <a class="dir-card" href="#video-work">
+        <div class="dir-num">03</div>
+        <div class="dir-label">Video Work</div>
+        <div class="dir-desc">Short-form content samples</div>
+      </a>
+      <a class="dir-card" href="#skills">
+        <div class="dir-num">04</div>
+        <div class="dir-label">Skills</div>
+        <div class="dir-desc">Tools &amp; capabilities</div>
+      </a>
+    </div>
+
+    <!-- PERFORMANCE -->
+    <section id="performance" class="card">
       <div class="section-title">
-        <h2>Case Study: Organic Instagram Reels Growth for an Independent Label</h2>
-        <span class="small">Short-form content system from scratch</span>
+        <h2>Performance Snapshot</h2>
+        <span>90 days &middot; Krok Records &middot; Social Media Coordinator</span>
+      </div>
+      <div class="stats-bar">
+        <div class="stat">
+          <div class="num">227K+</div>
+          <div class="lab">Accounts Reached</div>
+        </div>
+        <div class="stat">
+          <div class="num">590K+</div>
+          <div class="lab">Total Reel Views</div>
+        </div>
+        <div class="stat">
+          <div class="num">+413%</div>
+          <div class="lab">Profile Activity</div>
+        </div>
+        <div class="stat">
+          <div class="num">+726</div>
+          <div class="lab">Net New Followers</div>
+        </div>
+        <div class="stat">
+          <div class="num">63K+</div>
+          <div class="lab">Total Interactions</div>
+        </div>
+        <div class="stat">
+          <div class="num">94%</div>
+          <div class="lab">Views from Non-Followers</div>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <p class="small">Role: strategy &middot; scripting &middot; hook writing &middot; filming &middot; editing &middot; captions &middot; publishing</p>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section id="case-study" class="card">
+      <div class="section-title">
+        <h2>Case Study: Krok Records</h2>
+        <span>Organic Instagram Reels Growth &middot; 90 Days</span>
       </div>
 
-      <div class="two-col">
-        <div>
-          <h3 style="margin:0 0 8px;">Overview</h3>
-          <p>
-            <strong>Platform:</strong> Instagram Reels<br />
-            <strong>Timeframe:</strong> 90 days<br />
-            <strong>Client:</strong> Krok Records (Independent Music Label)<br />
-            <strong>My role:</strong> Social Media Coordinator — strategy, scripting, hook writing, filming, editing, captions, publishing
-          </p>
-
-          <h3 style="margin:16px 0 8px;">Starting Point</h3>
-          <p class="small">
-            The account began with a small audience and needed consistent reach, profile actions, and follower growth. Grew to 847 followers — a 600% increase — with 726 net new followers in 90 days.
-          </p>
+      <div class="cs-phases">
+        <div class="cs-phase">
+          <div class="cs-phase-label">Problem</div>
+          <p>Small audience, no consistent reach. Needed a repeatable content system to grow from scratch — no paid promotion, no existing team.</p>
         </div>
+        <div class="cs-phase">
+          <div class="cs-phase-label">Strategy</div>
+          <p>Built a short-form format optimized for retention. Strong hooks in the first 1–2 seconds. Consistent, sustainable posting pace to protect quality.</p>
+        </div>
+        <div class="cs-phase">
+          <div class="cs-phase-label">Execution</div>
+          <p>Scripted, filmed, and edited every video in-house. Appeared on camera to build trust and improve view-to-follow conversion.</p>
+        </div>
+      </div>
 
-        <div>
-          <h3 style="margin:0 0 8px;">Strategy</h3>
-          <ul>
-            <li>Built a repeatable short-form format designed for retention and shares.</li>
-            <li>Optimized hooks to communicate the point in the first 1–2 seconds.</li>
-            <li>Kept posting consistent and sustainable to protect quality and avoid burnout.</li>
-            <li>Made content in-house end-to-end to iterate quickly without bottlenecks.</li>
-          </ul>
-
-          <h3 style="margin:16px 0 8px;">Execution</h3>
-          <ul>
-            <li>Scripted and wrote on-screen hooks.</li>
-            <li>Edited for pacing and clarity.</li>
-            <li>Appeared on camera to build trust and improve conversion from views to follows.</li>
-          </ul>
+      <div class="stats-bar" style="margin-top:16px">
+        <div class="stat">
+          <div class="num">590K+</div>
+          <div class="lab">Total Views</div>
+        </div>
+        <div class="stat">
+          <div class="num">100K+</div>
+          <div class="lab">Top Performing Reel</div>
+        </div>
+        <div class="stat">
+          <div class="num">+600%</div>
+          <div class="lab">Follower Growth</div>
         </div>
       </div>
 
       <div class="hr"></div>
-
-      <h3 style="margin:16px 0 8px;">Results</h3>
-      <ul>
-        <li>590,000+ total views across Reels, including top-performing content exceeding 100K views.</li>
-        <li>Reached 227,000+ accounts in the last 90 days, with 94% of views from non-followers.</li>
-        <li>63,000+ total interactions through retention-focused content.</li>
-        <li>Grew account to 847 followers (+600%), with 726 net new followers in 90 days.</li>
-        <li>Increased profile activity by 413%, including 3,000+ profile visits and increased external link clicks.</li>
-      </ul>
-
-      <h3 style="margin:16px 0 8px;">Examples</h3>
-     
-      <ul>
-        <li><a href="https://www.instagram.com/reel/DS3JeynFbSD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 1</a> </li>
-        <li><a href="https://www.instagram.com/reel/DTvy4FaEi0k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 2</a> </li>
-        <li><a href="https://www.instagram.com/reel/DTbQj6Wjo7i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 3</a> </li>
-      </ul>
-
-      <h3 style="margin:16px 0 8px;">What I Learned</h3>
-      <ul>
-        <li>Low-volume posting can outperform high-volume output when the hook and pacing are strong.</li>
-        <li>On-camera content improves trust and follow-through when the message is clear.</li>
-        <li>Consistency makes testing easier and results more reliable.</li>
-      </ul>
+      <p class="small" style="margin-bottom:8px; font-weight:600; color:var(--text)">Content Examples</p>
+      <a href="https://www.instagram.com/reel/DS3JeynFbSD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 1</a>
+      <a href="https://www.instagram.com/reel/DTvy4FaEi0k/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 2</a>
+      <a href="https://www.instagram.com/reel/DTbQj6Wjo7i/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="pill" target="_blank">Music Promotion 3</a>
     </section>
 
-    <section id="video-work" class="card" style="margin: 0 0 16px;">
+    <!-- VIDEO WORK -->
+    <section id="video-work" class="card">
       <div class="section-title">
         <h2>Video Work</h2>
       </div>
       <div class="two-col">
         <div>
-          <p style="margin: 0 0 10px; font-weight: 600;">Top 3 Coffee</p>
+          <p style="margin:0 0 10px; font-weight:600;">Top 3 Coffee</p>
           <video controls style="width:100%; border-radius:12px; border:1px solid rgba(35,38,52,.9); background:#000;">
             <source src="videos/top 3 coffee.mp4" type="video/mp4" />
           </video>
         </div>
         <div>
-          <p style="margin: 0 0 10px; font-weight: 600;">Eola Reel</p>
+          <p style="margin:0 0 10px; font-weight:600;">Eola Reel</p>
           <video controls style="width:100%; border-radius:12px; border:1px solid rgba(35,38,52,.9); background:#000;">
             <source src="videos/eola reel.mp4" type="video/mp4" />
           </video>
@@ -281,10 +362,10 @@
       </div>
     </section>
 
-    <section id="skills" class="card" style="margin: 0 0 16px;">
+    <!-- SKILLS -->
+    <section id="skills" class="card">
       <div class="section-title">
-        <h2>Skills</h2>
-
+        <h2>Skills &amp; Tools</h2>
       </div>
       <div>
         <span class="pill">Short-form strategy</span>
@@ -293,38 +374,25 @@
         <span class="pill">On-camera performance</span>
         <span class="pill">Video editing</span>
         <span class="pill">Content systems</span>
-        <span class="pill">Analytics & reporting</span>
+        <span class="pill">Analytics &amp; reporting</span>
+        <span class="pill">CapCut</span>
+        <span class="pill">Premiere Pro</span>
+        <span class="pill">Canva</span>
+        <span class="pill">Photoshop</span>
+        <span class="pill">Google Sheets</span>
+        <span class="pill">Instagram Insights</span>
       </div>
-      <p class="small" style="margin-top:12px;">
-        Tools: CapCut and Premiere , Canva and photoshop, Google Sheets , Instagram Insights.
-      </p>
     </section>
 
-    <section id="about" class="card" style="margin: 0 0 16px;">
-      <div class="section-title">
-        <h2>About</h2>
-   
-      </div>
-      <p>
-        My background as an independent musician gave me a firsthand understanding of what it takes to build an audience from zero — no budget, no team, just content and consistency. That experience is what drew me to marketing and shaped how I approach it.
-      </p>
-      <p class="small" style="margin-top:10px;">
-        I currently handle social media for Krok Records, an independent music label, where I manage strategy, content production, and publishing end-to-end. I'm drawn to work where the feedback loop is fast and the results are measurable — short-form content fits that perfectly.
-      </p>
-      <p class="small" style="margin-top:10px;">
-        I handle everything in-house — scripting, filming, editing, and publishing — which means I'm never waiting on anyone to ship, test, or adjust. When something isn't working, I can identify it in the data and change it in the next post.
-      </p>
-    </section>
-
+    <!-- CONTACT -->
     <section id="contact" class="card">
       <div class="section-title">
         <h2>Contact</h2>
-
       </div>
       <p class="small">
-        Email: <a class="pill" href="mailto:ethangreenfield8@gmail.com">ethangreenfield8@gmail.com</a><br />
-        LinkedIn: <a class="pill" href="https://www.linkedin.com/in/ethan-greenfield-365566144" target="_blank" rel="noreferrer">Ethan Greenfield</a><br />
-        Instagram: <a class="pill" href="https://www.instagram.com/_hevanx_/" target="_blank" rel="noreferrer">Ethan Instagram</a>
+        Email: <a class="pill" href="mailto:ethangreenfield8@gmail.com">ethangreenfield8@gmail.com</a>
+        LinkedIn: <a class="pill" href="https://www.linkedin.com/in/ethan-greenfield-365566144" target="_blank" rel="noreferrer">Ethan Greenfield</a>
+        Instagram: <a class="pill" href="https://www.instagram.com/_hevanx_/" target="_blank" rel="noreferrer">@_hevanx_</a>
       </p>
     </section>
 
@@ -339,6 +407,3 @@
   </script>
 </body>
 </html>
-
-
-
